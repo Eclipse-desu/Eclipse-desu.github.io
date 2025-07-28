@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Eclipse</title>
-    <link>https://Eclipse-desu.github.io/</link>
-    <description>Recent content on Eclipse</description>
+    <title>Posts on Eclipse</title>
+    <link>https://Eclipse-desu.github.io/posts/</link>
+    <description>Recent content in Posts on Eclipse</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <managingEditor>hongyz@zju.edu.com (Eclipse)</managingEditor>
     <webMaster>hongyz@zju.edu.com (Eclipse)</webMaster>
     <copyright>© 2025 Eclipse</copyright>
-    <lastBuildDate>Mon, 28 Jul 2025 23:47:40 +0800</lastBuildDate><atom:link href="https://Eclipse-desu.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Jul 2025 23:47:40 +0800</lastBuildDate><atom:link href="https://Eclipse-desu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>My First Post</title>
