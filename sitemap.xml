@@ -9,6 +9,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://Eclipse-desu.github.io/posts/hugo-config/</loc>
+    <lastmod>2025-07-29T10:19:25+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://Eclipse-desu.github.io/posts/</loc>
     <lastmod>2025-07-29T10:19:25+08:00</lastmod>
     <changefreq>daily</changefreq>

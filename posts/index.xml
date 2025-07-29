@@ -12,6 +12,16 @@
     <lastBuildDate>Tue, 29 Jul 2025 10:19:25 +0800</lastBuildDate><atom:link href="https://Eclipse-desu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Hugo &#43; Blowfish 博客配置</title>
+      <link>https://Eclipse-desu.github.io/posts/hugo-config/</link>
+      <pubDate>Tue, 29 Jul 2025 10:19:25 +0800</pubDate>
+      <author>hongyz@zju.edu.com (Eclipse)</author>
+      <guid>https://Eclipse-desu.github.io/posts/hugo-config/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>My First Post</title>
       <link>https://Eclipse-desu.github.io/posts/my-first-post/</link>
       <pubDate>Mon, 28 Jul 2025 23:47:40 +0800</pubDate>
