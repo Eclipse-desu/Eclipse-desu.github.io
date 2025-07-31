@@ -134,7 +134,7 @@
     "keywords": ["CV(计算机视觉)","开放集合目标识别","提示词(prompt)"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1442"
+    "wordCount": "3904"
   }]
   </script>
 
@@ -556,7 +556,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-07-31T10:51:16&#43;08:00">2025 年 7 月 31 日</time><span class="px-2 text-primary-500">&middot;</span><span>1442 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
+      <time datetime="2025-07-31T10:51:16&#43;08:00">2025 年 7 月 31 日</time><span class="px-2 text-primary-500">&middot;</span><span>3904 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">8 分钟</span>
     
 
     
@@ -789,7 +789,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>       --texts <span class="s1">&#39;playground . road . tank . airplane . vehicle&#39;</span> -c <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>       --palette random <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>       --pred-score-thr 0.4
-</span></span></code></pre></div><p>在测试集中的一张机场图片上推理, 推理结果上居然一个框都没有! 后面才发现是 $0.4$ 的 <code>pred-score-thr</code> 太高了, 下降一点就好了. 相比之下, 这篇论文更大的价值可能是给出了一个 LAE-1M 数据集. 但其实这个数据集也不是很好. 根据论文的说法, 这个数据集统合了目前的一些开源数据集, 如 DIOR, DOTA v2 等等. 对那些有精细标注的数据, 统一了数据格式; 而对没有精细标注, 只有图片-描述的数据集, 采用 Segment Anything + 语言模型的半自动标注工具, 标注图像中的部分目标. 但这个自动标注还有很大提升空间, 机场里的飞机都不能全部标出来, 质量有点低了. 后面我也看了 SAM 的数据标注过程, 可能目前这个时段, 想要获得高质量的标注, 找高质量的人是不可或缺的. 也正是如此, 感觉个人/小团体研究很难作出比大公司好的成果啊.</p>
+</span></span></code></pre></div><p>在测试集中的一张机场图片上推理(inference), 推理结果上居然一个框都没有! 后面才发现是 0.4 的 <code>pred-score-thr</code> 太高了, 下降一点就好了. 相比之下, 这篇论文更大的价值可能是给出了一个 LAE-1M 数据集. 但其实这个数据集也不是很好. 根据论文的说法, 这个数据集统合了目前的一些开源数据集, 如 DIOR, DOTA v2 等等. 对那些有精细标注的数据, 统一了数据格式; 而对没有精细标注, 只有图片-描述的数据集, 采用 Segment Anything + 语言模型的半自动标注工具, 标注图像中的部分目标. 但这个自动标注还有很大提升空间, 机场里的飞机都不能全部标出来, 质量有点低了. 后面我也看了 SAM 的数据标注过程, 可能目前这个时段, 想要获得高质量的标注, 找高质量的人是不可或缺的. 也正是如此, 感觉个人/小团体研究很难作出比大公司好的成果啊.</p>
 
 <h1 class="relative group">发现 
     <div id="发现" class="anchor"></div>
@@ -806,20 +806,224 @@
 <table align="center">
   <tr>
     <!-- 第一行 -->
-    <td style="text-align: center; padding: 10px;">
-      <img src="pics/denseresidential_96_label_building.jpg" alt="single" width="200"><br>
+    <td style="text-align: center; ">
+      <img src="pics/denseresidential_96_label_building.jpg" alt="single" style="margin:0 auto 3px">
       <sub>building</sub>
     </td>
-    <td style="text-align: center; padding: 10px;">
-      <img src="pics/denseresidential_96_label_building+house+home+residential.jpg" alt="tial" width="200"><br>
+    <td style="text-align: center; ">
+      <img src="pics/denseresidential_96_label_building+house+home+residential.jpg" alt="tial" style="margin:0 auto 3px">
       <sub>... residential</sub>
     </td>
-    <td style="text-align: center; padding: 10px;">
-      <img src="pics/denseresidential_96_label_building+house+home+residental.jpg" alt="tal" width="200"><br>
+    <td style="text-align: center; ">
+      <img src="pics/denseresidential_96_label_building+house+home+residental.jpg" alt="tal" style="margin:0 auto 3px">
       <sub>... residental</sub>
     </td>
   </tr>
 </table>
+<p>如上图. 图片来自 LAE-1M 中 AID 数据集的 <code>denseresidential_96.jpg</code>, 阈值固定为 0.2, 从左到右的测试文本分别是 <code>building</code>, <code>building . house . home . residential</code>, <code>building . house . home . residental</code>. 可以看出添加了近义词之后, 检测效果有了明显提升; 而 <code>residental</code> 的效果比 <code>residential</code> 的效果还要好(在阈值相同的情况下, 多检测出了几个楼房). 但是 <code>residental</code> 实际上是错误的拼写, 这就很奇怪了, 为什么错误的拼写比正确的效果还要好呢?</p>
+<p>需要补充的是, 这里的「效果好」是从两个方面体现, 一个是找到的对象数量(召回率), 另一个是模型对检测结果的置信度(在 MMDetection 框架中, 表现为推理后模型给出的分数, 对应准确率). 前者较低, 则对应着「模型」遗漏较多物品; 后者较低, 则说明模型更容易把正确的和错误的混淆. 在检测结果固定时, 为了得到更多正确结果, 我们不得不降低置信度筛选阈值(score_threshold). 而降低阈值, 则找到的对象会变多, 但是代价是更多识别错误也会被保留, 准确度降低; 反过来, 为了提高准确度, 则必须提高阈值. 因此在模型并非完美时, 二者会相互削弱. 而从上三图片可见, <code>residental</code> 实际上是「增大了楼房被检测的分数」, 在这张图上大致增强了 0.05 左右, 而非楼房物品的变化则不明显(至少没有出现新的错误检验). 因此在阈值不变的情况下, 检测到了更多楼房, 这就是同时提高了召回率和准确率.</p>
+<p>随后我又联系 transformer 模型的结构, 想到 transformer 需要先分割语句, 提取分割后单词的特征. 而这些单词并不是按空格分开, 实际上还可能会按词根分开. 所以 <code>residental</code> 里面的 <code>tal</code> 可能是重点. 将提示词中的 <code>residental</code> 替换为 <code>tal</code> 之后, 效果居然一致地好.</p>
+<blockquote>
+<p><strong>Word Root is all you need!</strong>(开个玩笑)</p></blockquote>
+<p>因此我推测词根可能是这里起作用的关键, 随后我开始测试各种词根的检测效果.</p>
+
+<h1 class="relative group">进一步实验 
+    <div id="进一步实验" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%bf%9b%e4%b8%80%e6%ad%a5%e5%ae%9e%e9%aa%8c" aria-label="锚点">#</a>
+    </span>        
+    
+</h1>
+<p>接下来的测试十分暴力. 我让 DeepSeek 生成了一些英文的前后缀, 随后随机取其中的 6 个, 并与固定的实词结合, 检查推理效果. 随后我发现, 这些词根确实能提高检测效果, 而且不同词根检测物品有不同的倾向. 例如 <code>ment</code>, <code>ness</code>, <code>tion</code> 比较适合检测如楼房般方正的对象, <code>a</code>, <code>ance</code>, <code>let</code> 比较适合检测微小的对象. 最后我简单地通过</p>
+<ol>
+<li>重复上述的随机检测足够多次, 统计检测到的目标数量</li>
+<li>取目标数量较多的那些词根组合, 统计词根出现频率</li>
+<li>用最高的 6 个词根作为目前的「最优提示词」</li>
+</ol>
+<p>三步找到了一个(在单张图片上)效果不错的提示词. 以汽车为例, 实践公司提供的卫星影像里, 汽车基本只有几个像素大小, 因此我也从 LAE-1M 里选择了几个看起来差不多大的图片来演示</p>
+<table align="center">
+  <tr>
+    <!-- 第一行 -->
+    <td style="text-align: center; ">
+      <img src="pics/viaduct_48car+vehicle+bus.jpg" alt="single" style="margin:0 auto 3px">
+      <sub>viaduct_48</sub>
+    </td>
+    <td style="text-align: center; ">
+      <img src="pics/viaduct_54car+vehicle+bus.jpg" alt="tial" style="margin:0 auto 3px">
+      <sub>viaduct_54</sub>
+    </td>
+    <td style="text-align: center; ">
+      <img src="pics/viaduct_64car+vehicle+bus.jpg" alt="tal" style="margin:0 auto 3px">
+      <sub>viaduct_64</sub>
+    </td>
+  </tr>
+  <tr>
+    <!-- 第二行 -->
+    <td style="text-align: center; ">
+      <img src="pics/viaduct_48car+vehicle+bus+a+al+ance+ish+ward.jpg" alt="single" style="margin:0 auto 3px">
+      <sub>viaduct_48 +</sub>
+    </td>
+    <td style="text-align: center; ">
+      <img src="pics/viaduct_54car+vehicle+bus+a+al+ance+ish+ward.jpg" alt="tial" style="margin:0 auto 3px">
+      <sub>viaduct_54 +</sub>
+    </td>
+    <td style="text-align: center; ">
+      <img src="pics/viaduct_64car+vehicle+bus+a+al+ance+ish+ward.jpg" alt="tal" style="margin:0 auto 3px">
+      <sub>viaduct_64 +</sub>
+    </td>
+  </tr>
+</table>
+<p>第一行的提示词均为 <code>car . vehicle . bus</code>, 第二行的均为 <code>car . vehicle . bus . a . al . ance . ish . ward</code>, 阈值均为 0.05. 由于使用 MMDetection 自带的绘制 BBox 工具, 汽车会被标签遮挡, 导致完全看不到检测到了什么(, 而且我也不知道怎么修改), 所以我自己绘制了 BBox.</p>
+<p>可以明显看到, 使用了莫名其妙的词根之后, 检测到的车辆大幅增加, 特别在 <code>viaduct_54.jpg</code> 上, 几乎把所有汽车都检测出来了. 我觉得这是很惊人的, 因为实际去看卫星影像里的汽车, 有些人眼都分辨不出来是不是车, 所以在这个问题下模型能保证召回率就很不容易了. 但是在 <code>viaduct_64.jpg</code> 上效果明显不如前一个, 左上的很多汽车都没有被检测到. 在实践期间我测试了整个城区里上述提示词的检测效果, 结果也是如此: 在有些图片上效果极佳, 但是在有些图片上效果极差. 而两个极端的图片又其实没有太大的区别. 因为实践时间较短, 我暂时没有给出更好的方案.</p>
+<p>从结果来看, 我认为用词根增强搜索结果是可行的. 但是要想达到更好的效果, 肯定还需要进一步的研究.</p>
+
+<h1 class="relative group">结论 
+    <div id="结论" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%bb%93%e8%ae%ba" aria-label="锚点">#</a>
+    </span>        
+    
+</h1>
+<p>首先, 关于如何进一步找到更好的检测提示词, 我有一个设想: 由于遥感影像中事物类别较为有限, 所以可以为一些常用类别提前设计好专用的辅助词根. 而对某个特定目标, 可以通过上文中的方法先生成一些「词语-识别准确率+召回率」的关系, 并用这些关系作为数据训练一个(前馈)神经网络, 用模型估计每个词对结果的贡献. 毕竟我使用的数据都是没有标注的, 实际上并不知道检测到的是正确还是错误, 只看检测数量其实就是有缺陷的.</p>
+<p>其次, 这一过程说明了<strong>开放集合图像识别在识别任务中的优势</strong>. 在模型不变的情况下, 调整输入的自然语言可以显著提高识别效果, 说明开放集合目标识别不仅有机会识别训练集以外的目标, 即使在固定种类的目标识别问题上也能通过语言的微调来增强结果.</p>
+<p>最后, 我认为这种手段未必在所有的 grounding 类开放集目标识别模型上都适用. 首先我只测试了 LAE-DINO 模型, 其次很显然提示词被处理后得到的向量与语言模型和输入方式(这里是用<code>.</code>连接)有关, 同时语言向量和图特征向量的联系也和训练过程有关. 所以更换模型或者更换训练数据, 很可能会导致词根的效果变化. 还有, 英语的词根的地位实际上和汉语的字等同, 从这个角度来看, 如果使用汉语来识别, 可能天然地会比英文有更好的效果. 由于时间有限, 我无法对这个问题给出更多回答了.</p>
+
+<h1 class="relative group">测试代码 
+    <div id="测试代码" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%b5%8b%e8%af%95%e4%bb%a3%e7%a0%81" aria-label="锚点">#</a>
+    </span>        
+    
+</h1>
+<p>如果你对这个事情感兴趣, 我可以提供我用来测试的代码. 模型直接用的是 LAE-DINO Github 中提供的 checkpoint. 测试的代码需要放在 <code>LAE-DINO\mmdetection_lae</code> 下, 并且同目录下需要一个 <code>config.txt</code> 文件, 提供阈值、是否要用 MMDetection 绘制 BBox、检测图片的目录、提示词等.</p>
+<p><code>inference.py</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">json</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cv2</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">copy</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">plot_one_box</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Plots one bounding box on image img</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tl</span> <span class="o">=</span> <span class="n">linewidth</span>
+</span></span><span class="line"><span class="cl">    <span class="n">color</span> <span class="o">=</span> <span class="n">color</span> <span class="ow">or</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="n">tl</span><span class="p">,</span> <span class="n">lineType</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">LINE_AA</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_seaborn_colors</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;husl&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 可选调色板: &#39;husl&#39;, &#39;Set2&#39;, &#39;dark&#39;, &#39;bright&#39;等</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="n">palette</span><span class="p">,</span> <span class="n">n_colors</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">inference</span><span class="p">(</span><span class="nb">input</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">queries</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">thr</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">withlabel</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">mmdet.apis</span> <span class="kn">import</span> <span class="n">DetInferencer</span>
+</span></span><span class="line"><span class="cl">    <span class="n">init_args</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;configs/lae_dino/lae_dino_swin-t_pretrain_LAE-1M.py&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;weights&#34;</span><span class="p">:</span> <span class="s2">&#34;checkpoint/lae_dino_swint_lae1m-28ca3a15.pth&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;device&#34;</span><span class="p">:</span> <span class="s2">&#34;cuda:0&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;palette&#34;</span><span class="p">:</span> <span class="s2">&#34;random&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">inferencer</span> <span class="o">=</span> <span class="n">DetInferencer</span><span class="p">(</span><span class="o">**</span><span class="n">init_args</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">flag_folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">flag_folder</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">output_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="nb">input</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">output_name</span><span class="p">,</span> <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">output_name</span><span class="p">,</span> <span class="n">ext</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">inference_args</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;inputs&#34;</span><span class="p">:</span> <span class="nb">input</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;texts&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;custom_entities&#34;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;pred_score_thr&#34;</span><span class="p">:</span> <span class="n">thr</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;out_dir&#34;</span><span class="p">:</span> <span class="s2">&#34;outputs/&#34;</span> <span class="o">+</span> <span class="n">output_name</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;no_save_pred&#34;</span> <span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;no_save_vis&#34;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">withlabel</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># use inferencer</span>
+</span></span><span class="line"><span class="cl">        <span class="n">inference_args</span><span class="p">[</span><span class="s2">&#34;no_save_vis&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">inference_args</span><span class="p">[</span><span class="s2">&#34;no_save_vis&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">queries</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">flag_folder</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">raise</span> <span class="ne">NotImplementedError</span> <span class="c1"># 暂时没写, MMDetection 可以直接推理整个文件夹, 不过似乎不能推理多提示词. 如果只有一个提示词, 那可以直接调用 inferencer</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">origin_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">inference_args</span><span class="p">[</span><span class="s2">&#34;inputs&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="n">inference_args</span><span class="p">[</span><span class="s2">&#34;no_save_vis&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">withlabel</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">texts</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">append_name</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39; \. &#39;</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">inference_args</span><span class="p">[</span><span class="s2">&#34;texts&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">text</span>
+</span></span><span class="line"><span class="cl">            <span class="n">inferencer</span><span class="p">(</span><span class="o">**</span><span class="n">inference_args</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">oldname</span> <span class="o">=</span> <span class="n">inference_args</span><span class="p">[</span><span class="s2">&#34;out_dir&#34;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&#34;/vis/&#34;</span> <span class="o">+</span> <span class="n">output_name</span> <span class="o">+</span> <span class="n">ext</span>
+</span></span><span class="line"><span class="cl">            <span class="n">newname</span> <span class="o">=</span> <span class="n">inference_args</span><span class="p">[</span><span class="s2">&#34;out_dir&#34;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&#34;/vis/&#34;</span> <span class="o">+</span> <span class="n">output_name</span> <span class="o">+</span> <span class="n">append_name</span> <span class="o">+</span> <span class="n">ext</span>
+</span></span><span class="line"><span class="cl">            <span class="n">oldnamep</span> <span class="o">=</span> <span class="n">inference_args</span><span class="p">[</span><span class="s2">&#34;out_dir&#34;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&#34;/preds/&#34;</span> <span class="o">+</span> <span class="n">output_name</span> <span class="o">+</span> <span class="s2">&#34;.json&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">newnamep</span> <span class="o">=</span> <span class="n">inference_args</span><span class="p">[</span><span class="s2">&#34;out_dir&#34;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&#34;/preds/&#34;</span> <span class="o">+</span> <span class="n">output_name</span> <span class="o">+</span> <span class="n">append_name</span> <span class="o">+</span> <span class="s2">&#34;.json&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">withlabel</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">newname</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">newname</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">newnamep</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">                   <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">newnamep</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">newname</span> <span class="o">=</span> <span class="n">inference_args</span><span class="p">[</span><span class="s2">&#34;out_dir&#34;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&#34;/vis/&#34;</span> <span class="o">+</span> <span class="n">output_name</span> <span class="o">+</span> <span class="s2">&#34;_label_&#34;</span> <span class="o">+</span> <span class="n">append_name</span> <span class="o">+</span> <span class="n">ext</span>
+</span></span><span class="line"><span class="cl">                <span class="n">newnamep</span> <span class="o">=</span> <span class="n">inference_args</span><span class="p">[</span><span class="s2">&#34;out_dir&#34;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&#34;/preds/&#34;</span> <span class="o">+</span> <span class="n">output_name</span> <span class="o">+</span> <span class="s2">&#34;_label_&#34;</span> <span class="o">+</span> <span class="n">append_name</span> <span class="o">+</span> <span class="s2">&#34;.json&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">oldname</span><span class="p">,</span> <span class="n">newname</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">oldnamep</span><span class="p">,</span> <span class="n">newnamep</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">newname</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">newname</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">newnamep</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">newnamep</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">colors</span> <span class="o">=</span> <span class="n">get_seaborn_colors</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">                <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">inference_args</span><span class="p">[</span><span class="s2">&#34;out_dir&#34;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&#34;/vis&#34;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">oldnamep</span><span class="p">,</span> <span class="n">newnamep</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">new_img</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">origin_image</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">newnamep</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">jsonfile</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">args</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">jsonfile</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">labels</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">bboxes</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">for</span> <span class="nb">iter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">if</span> <span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="nb">iter</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">thr</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                            <span class="n">bbox</span> <span class="o">=</span> <span class="n">bboxes</span><span class="p">[</span><span class="nb">iter</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                            <span class="n">color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">labels</span><span class="p">[</span><span class="nb">iter</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">                            <span class="n">plot_one_box</span><span class="p">(</span><span class="n">bbox</span><span class="p">,</span> <span class="n">new_img</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">newname</span><span class="p">,</span> <span class="n">new_img</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">del</span> <span class="n">new_img</span>
+</span></span><span class="line"><span class="cl">        <span class="k">del</span> <span class="n">origin_image</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">config_name</span> <span class="o">=</span> <span class="s2">&#34;./config.txt&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># line 1: picture x, y numbers, score_thr</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># line n: promptss</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">config_name</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">commands</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_thr</span><span class="p">,</span> <span class="n">yesno</span> <span class="o">=</span> <span class="n">commands</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">thr</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">_thr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">yesno</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;T&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">withlabel</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">withlabel</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="n">filename</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">commands</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="n">inference</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">commands</span><span class="p">[</span><span class="mi">2</span><span class="p">:],</span> <span class="n">thr</span><span class="p">,</span> <span class="n">withlabel</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">main</span><span class="p">()</span>
+</span></span></code></pre></div><p><code>config.txt</code> example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">0.05 True
+</span></span><span class="line"><span class="cl">&lt;path to img&gt;
+</span></span><span class="line"><span class="cl">car
+</span></span><span class="line"><span class="cl">car . vehicle . bus . a . al . ance . ish . ward 
+</span></span></code></pre></div>
           
           
           
