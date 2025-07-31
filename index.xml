@@ -9,7 +9,17 @@
     <managingEditor>hongyz@zju.edu.com (Eclipse)</managingEditor>
     <webMaster>hongyz@zju.edu.com (Eclipse)</webMaster>
     <copyright>© 2025 Eclipse</copyright>
-    <lastBuildDate>Tue, 29 Jul 2025 15:16:03 +0800</lastBuildDate><atom:link href="https://Eclipse-desu.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 31 Jul 2025 10:51:16 +0800</lastBuildDate><atom:link href="https://Eclipse-desu.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>使用语言增强 LAE-DINO 模型检测卫星遥感图像效果 - 初探</title>
+      <link>https://Eclipse-desu.github.io/posts/lae-dino-report/</link>
+      <pubDate>Thu, 31 Jul 2025 10:51:16 +0800</pubDate>
+      <author>hongyz@zju.edu.com (Eclipse)</author>
+      <guid>https://Eclipse-desu.github.io/posts/lae-dino-report/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Friends</title>
