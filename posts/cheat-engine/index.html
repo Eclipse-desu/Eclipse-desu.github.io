@@ -1,0 +1,1815 @@
+<!doctype html>
+<html
+  lang="zh-cn"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="zh-cn">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  <title>Cheat Engine Tutorial &middot; Eclipse</title>
+    <meta name="title" content="Cheat Engine Tutorial &middot; Eclipse">
+
+  
+  
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/posts/cheat-engine/">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.0ad212daab98ca5051eea8a0d3412430bd53f90dba7b667f9e7598fb545043ad6052a79d2142ecda91752bc9d24f68d9178c523bafdbf2cd1b465443389bbf58.css"
+    integrity="sha512-CtIS2quYylBR7qig00EkML1T&#43;Q26e2Z/nnWY&#43;1RQQ61gUqedIULs2pF1K8nST2jZF4xSO6/b8s0bRlRDOJu/WA==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.90867e4ceecde25580f418994053fd0749d446fd0e8f0028782793ec6434fb0945ecbfe21e6a8b2f788760c0ecc3663aacb155e42e4e73d79ebaebadecd201d2.js"
+      integrity="sha512-kIZ&#43;TO7N4lWA9BiZQFP9B0nURv0OjwAoeCeT7GQ0&#43;wlF7L/iHmqLL3iHYMDsw2Y6rLFV5C5Oc9eeuuut7NIB0g=="
+      data-copy="复制"
+      data-copied="已复制"></script>
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.b4b722fcb5d42f34f52b30a92f3521b69f403ca9d96d0d6179eb537cb870f5d83fdf1fe836688d95d5c99fefbda4170487711006e56051fa67ea00da10521721.js" integrity="sha512-tLci/LXULzT1KzCpLzUhtp9APKnZbQ1heetTfLhw9dg/3x/oNmiNldXJn&#43;&#43;9pBcEh3EQBuVgUfpn6gDaEFIXIQ=="></script>
+  
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/posts/cheat-engine/">
+  <meta property="og:site_name" content="Eclipse">
+  <meta property="og:title" content="Cheat Engine Tutorial">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-08-02T09:49:41+08:00">
+    <meta property="article:modified_time" content="2025-08-02T09:49:41+08:00">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Cheat Engine Tutorial">
+
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Posts",
+    "name": "Cheat Engine Tutorial",
+    "headline": "Cheat Engine Tutorial",
+    
+    
+    "inLanguage": "zh-cn",
+    "url" : "http:\/\/localhost:1313\/posts\/cheat-engine\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Eclipse"
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-08-02T09:49:41\u002b08:00",
+    "datePublished": "2025-08-02T09:49:41\u002b08:00",
+    
+    "dateModified": "2025-08-02T09:49:41\u002b08:00",
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "6163"
+  }]
+  </script>
+
+
+
+  
+  
+    <meta name="author" content="Eclipse">
+  
+  
+    
+      
+        
+      
+    
+      
+        
+          <link href="https://github.com/Eclipse-desu" rel="me">
+        
+      
+    
+  
+
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.03cb160e3cfdb2667a2e2c80d283bebcf63ff8bbc4b629c9ab2babf6fae1d0c07ad470edae783efa4fabda2ac01c58d60e63b98b3c336be8208460f08f4354f5.js" integrity="sha512-A8sWDjz9smZ6LiyA0oO&#43;vPY/&#43;LvEtinJqyur9vrh0MB61HDtrng&#43;&#43;k&#43;r2irAHFjWDmO5izwza&#43;gghGDwj0NU9Q=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+
+  
+  
+  
+  
+    
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+  
+
+  
+
+  
+  
+</head>
+<body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>跳过正文</a
+      >
+    </div>
+    
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3 pt-[2px] pr-0 pb-[3px] pl-0">
+  
+  
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+        <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">
+          Eclipse
+        </a>
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <a
+  href="/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="Eclipse">
+    Home
+  </p>
+</a>
+
+
+
+      
+        
+  <a
+  href="/posts/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="Posts">
+    Posts
+  </p>
+</a>
+
+
+
+      
+        
+  <a
+  href="/friends/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="Friends">
+    Friends
+  </p>
+</a>
+
+
+
+      
+    
+
+    
+
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="搜索 (/)">
+        
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+      </button>
+    
+
+    
+      <div class=" flex items-center">
+        <button
+          id="appearance-switcher"
+          aria-label="Dark mode switcher"
+          type="button"
+          class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+          <div class="flex items-center justify-center dark:hidden">
+            
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+          </div>
+          <div class="items-center justify-center hidden dark:flex">
+            
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+          </div>
+        </button>
+      </div>
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="搜索 (/)">
+        
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+      </button>
+    
+
+    
+      <button
+        id="appearance-switcher-mobile"
+        aria-label="Dark mode switcher"
+        type="button"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
+        <div class="flex items-center justify-center dark:hidden">
+          
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+        </div>
+        <div class="items-center justify-center hidden dark:flex">
+          
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+        </div>
+      </button>
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+
+  </span>
+
+
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="Eclipse">
+      Home
+    </p>
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/posts/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="Posts">
+      Posts
+    </p>
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/friends/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="Friends">
+      Friends
+    </p>
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+
+  <article>
+    
+
+
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        Cheat Engine Tutorial
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-08-02T09:49:41&#43;08:00">2025 年 8 月 2 日</time><span class="px-2 text-primary-500">&middot;</span><span>6163 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">13 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  
+  
+  <span id="busuanzi_value_page_pv" ></span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
+  </span>
+
+</span>
+</span>
+
+    
+
+    
+    
+      <span class="pl-2"><span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    草稿
+  </span>
+</span>
+</span>
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+      </div>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+
+        
+          
+          
+<div class="flex author">
+  
+    
+    
+      
+    
+    
+      
+        
+      
+      <img
+        class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4"
+        width="96"
+        height="96"
+        alt="Eclipse"
+        src="/img/icon_01_hu_a9aaf2ae2c4dab3e.png">
+    
+  
+  <div class="place-self-center">
+    
+      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+        作者
+      </div>
+      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+        Eclipse
+      </div>
+    
+    
+      <div class="text-sm text-neutral-700 dark:text-neutral-400">今夜，灵魂彼此相拥</div>
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="mailto:hongyz@zju.edu.com"
+          target="_blank"
+          aria-label="Email"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/Eclipse-desu"
+          target="_blank"
+          aria-label="Github"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+        
+
+        
+
+        
+          <div class="mb-5"></div>
+        
+
+      
+
+    </header>
+
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+
+
+        <div class="article-content max-w-prose mb-20">
+          
+<h1 class="relative group">前言 
+    <div id="前言" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%89%8d%e8%a8%80" aria-label="锚点">#</a>
+    </span>        
+    
+</h1>
+<p>本文记录一下学习 Cheat Engine 教程的过程.</p>
+
+<h1 class="relative group">关卡 
+    <div id="关卡" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%85%b3%e5%8d%a1" aria-label="锚点">#</a>
+    </span>        
+    
+</h1>
+
+<h2 class="relative group">第一关 
+    <div id="第一关" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%ac%ac%e4%b8%80%e5%85%b3" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<details class="spoiler">
+  <summary>Step 1</summary>
+  <div class="spoiler-content">
+    <blockquote>
+<p>Welcome to the Cheat Engine Tutorial (v3.6)</p>
+<p>This tutorial will teach you the basics of cheating in video games. It will also show you foundational aspects of using Cheat Engine (or CE for short). Follow the steps below to get started.</p>
+<p>1: Open Cheat Engine if it currently isn&rsquo;t running.
+2: Click on the &ldquo;Open Process&rdquo; icon (it&rsquo;s the top-left icon with the computer on it, below &ldquo;File&rdquo;.).
+3: With the Process List window now open, look for this tutorial&rsquo;s process in the list. It will look something like &ldquo;00001F98-Tutorial-x86_64.exe&rdquo; or &ldquo;0000047C-Tutorial-i386.exe&rdquo;. (The first 8 numbers/letters will probably be different.)
+4: Once you&rsquo;ve found the process, click on it to select it, then click the &ldquo;Open&rdquo; button. (Don&rsquo;t worry about all the other buttons right now. You can learn about them later if you&rsquo;re interested.)</p>
+<p>Congratulations! If you did everything correctly, the process window should be gone with Cheat Engine now attached to the tutorial (you will see the process name towards the top-center of CE).</p>
+<p>Click the &ldquo;Next&rdquo; button below to continue, or fill in the password and click the &ldquo;OK&rdquo; button to proceed to that step.)</p>
+<p>If you&rsquo;re having problems, simply head over to forum.cheatengine.org, then click on &ldquo;Tutorials&rdquo; to view beginner-friendly guides!</p></blockquote>
+
+  </div>
+</details>
+
+<style>
+.spoiler {
+  margin: 1rem 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+}
+.spoiler summary {
+  padding: 0.5rem 1rem;
+  background-color: #f7fafc;
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;  
+}
+.spoiler summary::marker,
+.spoiler summary::-webkit-details-marker {
+  display: none;  
+}
+.spoiler summary:after {
+  content: "▼";
+  float: right;
+  transition: transform 0.2s;
+}
+.spoiler[open] summary:after {
+  transform: rotate(180deg);
+}
+.spoiler-content {
+  padding: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+</style>
+<p>第一关主要介绍如何在 CE 中打开程序. 另外可以用后续关卡的 <code>PW</code> 直接跳转到想要继续的关卡.</p>
+
+<h2 class="relative group">第二关 
+    <div id="第二关" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%ac%ac%e4%ba%8c%e5%85%b3" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<details class="spoiler">
+  <summary>Step 2</summary>
+  <div class="spoiler-content">
+    <blockquote>
+<p>Step 2: Exact Value scanning (PW=090453)
+Now that you have opened the tutorial with Cheat Engine let&rsquo;s get on with the next step.</p>
+<p>You can see at the bottom of this window is the text Health: xxx
+Each time you click &lsquo;Hit me&rsquo;  your health gets decreased.</p>
+<p>To get to the next step you have to find this value and change it to 1000</p>
+<p>To find the value there are different ways, but I&rsquo;ll tell you about the easiest, &lsquo;Exact Value&rsquo;:
+First make sure value type is set to at least 2-bytes or 4-bytes. 1-byte will also work, but you&rsquo;ll run into an easy to fix problem when you&rsquo;ve found the address and want to change it. The 8-byte may perhaps works if the bytes after the address are 0, but I wouldn&rsquo;t take the bet.
+Single, double, and the other scans just don&rsquo;t work, because they store the value in a different way.</p>
+<p>When the value type is set correctly, make sure the scantype is set to &lsquo;Exact Value&rsquo;
+Then fill in the number your health is in the value box. And click &lsquo;First Scan&rsquo;
+After a while (if you have an extremely slow pc) the scan is done and the results are shown in the list on the left.</p>
+<p>If you find more than 1 address and you don&rsquo;t know for sure which address it is, click &lsquo;Hit me&rsquo;, fill in the new health value into the value box, and click &lsquo;Next Scan&rsquo;
+repeat this until you&rsquo;re sure you&rsquo;ve found it. (that includes that there&rsquo;s only 1 address in the list&hellip;..)</p>
+<p>Now double click the address in the list on the left. This makes the address pop-up in the list at the bottom, showing you the current value.
+Double click the value, (or select it and press enter), and change the value to 1000.</p>
+<p>If everything went ok the Next button should become enabled, and you&rsquo;re ready for the next step.</p>
+<p>Note:
+If you did anything wrong while scanning, click &ldquo;New Scan&rdquo; and repeat the scanning again.
+Also, try playing around with the value and click &lsquo;Hit me&rsquo;.</p></blockquote>
+
+  </div>
+</details>
+
+<style>
+.spoiler {
+  margin: 1rem 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+}
+.spoiler summary {
+  padding: 0.5rem 1rem;
+  background-color: #f7fafc;
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;  
+}
+.spoiler summary::marker,
+.spoiler summary::-webkit-details-marker {
+  display: none;  
+}
+.spoiler summary:after {
+  content: "▼";
+  float: right;
+  transition: transform 0.2s;
+}
+.spoiler[open] summary:after {
+  transform: rotate(180deg);
+}
+.spoiler-content {
+  padding: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+</style>
+<p>第二关是最简单的应用: 搜索精确数值. 很多游戏的数值都和显示的一样. 关卡中有一个生命值 <code>Health</code>, 每次按 Hit me 就会掉血. 只需要在 Scan Value 框内搜索 <code>Health</code>, 在每次点击变化后再次搜索. 由于本关比较简单, 一次搜索就能找到了(即左边表格上方应该显示 Found:1). 双击左边搜索到的结果, 他会出现在下方的表格里. 再双击其值(Value), 修改为 1000 即可过关.</p>
+
+<h2 class="relative group">第三关 
+    <div id="第三关" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%ac%ac%e4%b8%89%e5%85%b3" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<details class="spoiler">
+  <summary>Step 3</summary>
+  <div class="spoiler-content">
+    <blockquote>
+<p>Step 3: Unknown initial value (PW=419482)</p>
+<p>Ok, seeing that you&rsquo;ve figured out how to find a value using exact value let&rsquo;s move on to the next step.</p>
+<p>First things first though. Since you are doing a new scan, you have to click on New Scan first, to start a new scan. (You may think this is straighforward, but you&rsquo;d be surprised how many people get stuck on that step) I won&rsquo;t be explaining this step again, so keep this in mind.</p>
+<p>Now that you&rsquo;ve started a new scan, let&rsquo;s continue.</p>
+<p>In the previous test we knew the initial value so we could do an exact value search, but now we have a status bar where we don&rsquo;t know the starting value.</p>
+<p>We only know that the value is between 0 and 500. And each time you click &lsquo;Hit me&rsquo; you lose some health. The amount you lose each time is shown above the status bar.</p>
+<p>Again there are several different ways to find the value. (like doing a decreased value by&hellip; scan), but I&rsquo;ll only explain the easiest. &ldquo;Unknown initial value&rdquo;, and decreased value.</p>
+<p>Because you don&rsquo;t know the value it is right now, exact value wont do any good, so choose as scantype &lsquo;Unknown initial value&rsquo;, again, the value type is 4-bytes. (Most windows apps use 4-bytes.) Click First scan and wait till it&rsquo;s done.</p>
+<p>When it is done click &lsquo;Hit me&rsquo;. You&rsquo;ll lose some of your health. (the amount you lost shows for a few seconds and then disappears, but you don&rsquo;t need that)</p>
+<p>Now go to Cheat Engine, and choose &lsquo;Decreased Value&rsquo; and click &lsquo;Next Scan&rsquo;</p>
+<p>When that scan is done, click &lsquo;Hit me&rsquo; again, and repeat the above till you only find a few.</p>
+<p>We know the value is between 0 and 500, so pick the one that is most likely the address we need, and add it to the list.</p>
+<p>Now change the health to 5000, to proceed to the next step.</p></blockquote>
+
+  </div>
+</details>
+
+<style>
+.spoiler {
+  margin: 1rem 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+}
+.spoiler summary {
+  padding: 0.5rem 1rem;
+  background-color: #f7fafc;
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;  
+}
+.spoiler summary::marker,
+.spoiler summary::-webkit-details-marker {
+  display: none;  
+}
+.spoiler summary:after {
+  content: "▼";
+  float: right;
+  transition: transform 0.2s;
+}
+.spoiler[open] summary:after {
+  transform: rotate(180deg);
+}
+.spoiler-content {
+  padding: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+</style>
+<p>第三关是要搜索不知道初始值的数值, 比如只能看到长度, 没有刻度的血条. 其方法是用 CE 的 Unknown initial value 选项, 随后在血条减少时不断搜索 Decreased Value, 知道只有一个数值(并且看起来变化符合血条长度). 具体操作之前, 需要先点 <strong>New Scan</strong> 重置, 在 Scan type 中选上述选项, 这里提示了 value type 是 4-byte, 但是因为我们其实不知道, 所以也可以尝试选 All. 如果选择 Unknown + All, 一开始可能不会显示任何值(因为程序内存里的每一个数据都满足这两个选项), 这是正常的, 继续搜索即可.</p>
+<p>接下来按下 Hit me 的时候, 会发现关卡实际上会提示扣血多少. 所以可以更精确地搜 Decreased value by &hellip;, 用给出的扣血数额搜索. 大概搜索 4-5 次后, 剩下的数量不多, 可以看到一个 300 多的数值, 因为题目里说知道是 0-500 之间的数, 所以可以确定就是这个了. 继续搜索几次, 只剩下这个数值之后, 就可以改成 5000 了.</p>
+
+<h2 class="relative group">第四关 
+    <div id="第四关" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%ac%ac%e5%9b%9b%e5%85%b3" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<details class="spoiler">
+  <summary>Step 4</summary>
+  <div class="spoiler-content">
+    <blockquote>
+<p>Step 4: Floating points (PW=890124)</p>
+<p>In the previous tutorial we used bytes to scan, but some games store information in so called &lsquo;floating point&rsquo; notations.</p>
+<p>(probably to prevent simple memory scanners from finding it the easy way)</p>
+<p>a floating point is a value with some digits behind the point. (like 5.12 or 11321.1)</p>
+<p>Below you see your health and ammo. Both are stored as Floating point notations, but health is stored as a float and ammo is stored as a double.</p>
+<p>Click on hit me to lose some health, and on shoot to decrease your ammo with 0.5</p>
+<p>You have to set BOTH values to 5000 or higher to proceed.</p>
+<p>Exact value scan will work fine here, but you may want to experiment with other types too.</p></blockquote>
+<blockquote>
+<p>Hint: It is recommended to disable &ldquo;Fast Scan&rdquo; for type double</p></blockquote>
+
+  </div>
+</details>
+
+<style>
+.spoiler {
+  margin: 1rem 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+}
+.spoiler summary {
+  padding: 0.5rem 1rem;
+  background-color: #f7fafc;
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;  
+}
+.spoiler summary::marker,
+.spoiler summary::-webkit-details-marker {
+  display: none;  
+}
+.spoiler summary:after {
+  content: "▼";
+  float: right;
+  transition: transform 0.2s;
+}
+.spoiler[open] summary:after {
+  transform: rotate(180deg);
+}
+.spoiler-content {
+  padding: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+</style>
+<p>第四关教我们搜索浮点数. 很多游戏里看起来是整数的数值, 其实也存的是浮点数. 我们可以先尝试搜索 4-byte 的 100, Hit me 之后, <code>Health</code> 会变化, 但是再搜索就没有任何结果了. 这说明 <code>Health</code> 不是整型. 再尝试 Float 类型(不要忘记 New Scan), 基本上 Hit me 两下就可以确定是哪个, 于是把它添加到下方表格里.</p>
+<p>再尝试搜索 Ammo, 这个时候用 Float 已经搜不到了, 所以尝试用 Double 搜索(<strong>注意 CE 提示最好在搜索 Double 类型时关掉 Fast Scan 选项</strong>, 当然这里不关也可以搜到). 这里因为我 Hit 过一下, 搜索过后就只有唯一的一个结果, 再 Hit 几次发现确实是同步变化. 所以这样就找到了两个数值, 都改成 5000 即可.</p>
+
+<h2 class="relative group">第五关 
+    <div id="第五关" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%ac%ac%e4%ba%94%e5%85%b3" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<details class="spoiler">
+  <summary>Step 5</summary>
+  <div class="spoiler-content">
+    <blockquote>
+<p>Step 5: Code finder (PW=888899)</p>
+<p>Sometimes the location of a value is stored at changes, when you restart the game, or even while you&rsquo;re playing. In that case you can use 2 things to still make a table that works.</p>
+<p>In this step I&rsquo;ll try to describe how to use the Code Finder function.</p>
+<p>The value down here will be at a different location each time you start the tutorial, so a normal entry in the address list wouldn&rsquo;t work.</p>
+<p>First try to find the address. (You&rsquo;ve got to this point so I assume you know how to do that.)</p>
+<p>When you&rsquo;ve found the address, right-click the address in Cheat Engine and choose &ldquo;Find out what writes to this address&rdquo;. A window will pop up with an empty list.</p>
+<p>Then click on the Change value button in this tutorial, and go back to Cheat Engine. If everything went right, there should be an address with assembler code there now.</p>
+<p>Click it and choose the Replace option to replace it with code that does nothing. That will also add the code address to the code list in the Advanced Options window. (Which gets saved if you save your table.)</p>
+<p>Click on Stop, so the game will start running normal again, and click on Close to close the window.</p>
+<p>Now, click on Change value, and if everything went right the Next button should become enabled.</p>
+<p>Note: When you&rsquo;re freezing the address with a high enough speed it may happen that Next becomes visible anyhow.</p></blockquote>
+
+  </div>
+</details>
+
+<style>
+.spoiler {
+  margin: 1rem 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+}
+.spoiler summary {
+  padding: 0.5rem 1rem;
+  background-color: #f7fafc;
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;  
+}
+.spoiler summary::marker,
+.spoiler summary::-webkit-details-marker {
+  display: none;  
+}
+.spoiler summary:after {
+  content: "▼";
+  float: right;
+  transition: transform 0.2s;
+}
+.spoiler[open] summary:after {
+  transform: rotate(180deg);
+}
+.spoiler-content {
+  padding: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+</style>
+<p>第五关是要修改汇编代码. 这一关中, 每次修改值时, 这个值的地址都会随机变化, 所以直接搜索并修改是不行的, 需要找到修改它的地址, 这样再按按钮就不会修改值了(类比到游戏就是把伤害结算部分删掉, 这样即便是受伤也不会掉血了).</p>
+<p>搜索的方法是</p>
+<ol>
+<li>用通常方法找到该值;</li>
+<li>右键, 在右键菜单中选择 &ldquo;Find out what writes to this address&rdquo;, 会出现一个空白的表格页面(右边有一些按钮);</li>
+<li>再次改变值, 这时新页面里会出现一条记录, 点击可以在下面看到附近的汇编代码
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="err">00427</span><span class="nf">D89</span> <span class="p">-</span> <span class="mi">8</span><span class="no">B</span> <span class="mi">80</span> <span class="no">A8040000</span>  <span class="p">-</span> <span class="no">mov</span> <span class="no">eax</span><span class="p">,[</span><span class="no">eax</span><span class="err">+</span><span class="mi">000004</span><span class="no">A8</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="err">00427</span><span class="nf">D8F</span> <span class="p">-</span> <span class="mi">8</span><span class="no">B</span> <span class="mi">55</span> <span class="no">F0</span>  <span class="p">-</span> <span class="no">mov</span> <span class="no">edx</span><span class="p">,[</span><span class="no">ebp-10</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="err">00427</span><span class="nf">D92</span> <span class="p">-</span> <span class="mi">89</span> <span class="mi">10</span>  <span class="p">-</span> <span class="no">mov</span> <span class="p">[</span><span class="no">eax</span><span class="p">],</span><span class="no">edx</span> <span class="err">&lt;&lt;</span>
+</span></span><span class="line"><span class="cl"><span class="err">00427</span><span class="nf">D94</span> <span class="p">-</span> <span class="mi">8</span><span class="no">B</span> <span class="mi">45</span> <span class="no">F8</span>  <span class="p">-</span> <span class="no">mov</span> <span class="no">eax</span><span class="p">,[</span><span class="no">ebp-08</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="err">00427</span><span class="nf">D97</span> <span class="p">-</span> <span class="mi">8</span><span class="no">B</span> <span class="mi">80</span> <span class="no">A8040000</span>  <span class="p">-</span> <span class="no">mov</span> <span class="no">eax</span><span class="p">,[</span><span class="no">eax</span><span class="err">+</span><span class="mi">000004</span><span class="no">A8</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">EAX</span><span class="err">=</span><span class="mi">018185</span><span class="no">D8</span>
+</span></span><span class="line"><span class="cl"><span class="nf">EBX</span><span class="err">=</span><span class="mi">00000000</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ECX</span><span class="err">=</span><span class="mi">00000000</span>
+</span></span><span class="line"><span class="cl"><span class="nf">EDX</span><span class="err">=</span><span class="mi">000001</span><span class="no">FC</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ESI</span><span class="err">=</span><span class="mi">00000000</span>
+</span></span><span class="line"><span class="cl"><span class="nf">EDI</span><span class="err">=</span><span class="mi">00618178</span>
+</span></span><span class="line"><span class="cl"><span class="nf">EBP</span><span class="err">=</span><span class="mi">0165</span><span class="no">F300</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ESP</span><span class="err">=</span><span class="mi">0165</span><span class="no">F1D4</span>
+</span></span><span class="line"><span class="cl"><span class="nf">EIP</span><span class="err">=</span><span class="mi">00427</span><span class="no">D94</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">First</span> <span class="no">seen</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">35</span><span class="p">:</span><span class="mi">15</span>
+</span></span><span class="line"><span class="cl"><span class="nf">Last</span> <span class="no">seen</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">35</span><span class="p">:</span><span class="mi">15</span>
+</span></span></code></pre></div><code>&lt;&lt;</code> 这里就是修改的代码, 把 <code>eax</code> 指向的值改为了 <code>edx</code> 的值. 可以看到我这里 EDX = 1FC = 508, 与关卡中显示的相同. 那么只需要点击 Replace 输入 <code>nop</code>, 把这一行代码改用 <code>nop</code> 填满即可. 此时再点击 Change value, 就不会发生变化了.</li>
+</ol>
+
+<h2 class="relative group">第六关 
+    <div id="第六关" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%ac%ac%e5%85%ad%e5%85%b3" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<details class="spoiler">
+  <summary>Step 6</summary>
+  <div class="spoiler-content">
+    <blockquote>
+<p>Step 6: Pointers: (PW=098712)</p>
+<p>In the previous step I explained how to use the Code finder to handle changing locations. But that method alone makes it difficult to find the address to set the values you want.</p>
+<p>That&rsquo;s why there are pointers:</p>
+<p>At the bottom you&rsquo;ll find 2 buttons. One will change the value, and the other changes the value AND the location of the value.</p>
+<p>For this step you don&rsquo;t really need to know assembler, but it helps a lot if you do.</p>
+<p>First find the address of the value. When you&rsquo;ve found it use the function to find out what accesses this address.</p>
+<p>Change the value again, and an item will show up in the list. Double click that item. (or select and click on more info) and a new window will open with detailed information on what happened when the instruction ran.</p>
+<p>If the assembler instruction doesn&rsquo;t have anything between a &lsquo;[&rsquo; and &lsquo;]&rsquo; then use another item in the list.</p>
+<p>If it does it will say what it think will be the value of the pointer you need.</p>
+<p>Go back to the main cheat engine window (you can keep this extra info window open if you want, but if you close it, remember what is between the &lsquo;[&rsquo; and &lsquo;]&rsquo; ) and do a 4 byte scan in hexadecimal for the value the extra info told you.</p>
+<p>When done scanning it may return 1 or a few hundred addresses. Most of the time the address you need will be the smallest one. Now click on the &ldquo;Add Address Manually&rdquo; button and select the pointer checkbox.</p>
+<p>The window will change and allow you to type in the address of a pointer and an offset.</p>
+<p>Fill in the address you just found. It can be in the form: &ldquo;Tutorial-i386.exe&rdquo;+xxxxxx (relative to the process),</p>
+<p>or you can double click the address to add it to the address list and use the absolute address which appears there.</p>
+<p>If the assembler instruction has a calculation (e.g: [esi+12]) at the end then type the value in that&rsquo;s at the end above the address field. This is the offset. Otherwise leave it 0. If it was a more complicated instruction look at the following calculation.</p>
+<p>Example of a more complicated instruction:</p>
+<p>[EAX*2+EDX+00000310] eax=4C and edx=00801234.</p>
+<p>In this case EDX would be the value the pointer has, and EAX<em>2+00000310 the offset, so the offset you&rsquo;d fill in would be 2</em>4C+00000310=3A8. (This is all in hex, use calc.exe from Windows in Programmer mode to calculate hex values.)</p>
+<p>Back to the tutorial, click OK and the address will be added. If all went right the address will show P-&gt;xxxxxxx, with xxxxxxx being the address of the value you found. If that&rsquo;s not right, you&rsquo;ve done something wrong.</p>
+<p>Now, change the value using the pointer you added in to 5000 and click in the &lsquo;Active&rsquo; coloumn to freeze it. Then click Change pointer, and if all went right the Next button will become visible.</p>
+<p>extra:</p>
+<p>You could also use the pointer scanner to find the pointer to this address. <a
+  href="https://cheatengine.org/help/pointer-scan.htm"
+    target="_blank"
+  >https://cheatengine.org/help/pointer-scan.htm</a></p></blockquote>
+
+  </div>
+</details>
+
+<style>
+.spoiler {
+  margin: 1rem 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+}
+.spoiler summary {
+  padding: 0.5rem 1rem;
+  background-color: #f7fafc;
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;  
+}
+.spoiler summary::marker,
+.spoiler summary::-webkit-details-marker {
+  display: none;  
+}
+.spoiler summary:after {
+  content: "▼";
+  float: right;
+  transition: transform 0.2s;
+}
+.spoiler[open] summary:after {
+  transform: rotate(180deg);
+}
+.spoiler-content {
+  padding: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+</style>
+<p>第五关我们只实现了让按钮失效, 但是不能修改这个值(如果尝试修改, 会发现这个值没有变化). 这一步我们要找到数值的指针.</p>
+<ol>
+<li>搜索到这个值;</li>
+<li>右键选 &ldquo;Find out what accesses this address&rdquo;, 按 Change Value, 会出现多条指令. 按照教程, 我们需要找其中带有 <code>[]</code> 的, 也就是有寻址的.
+<div align=center>
+ <img src="pics/step6-access.png" alt="step6-access" width="400" style="margin:0 auto 3px">
+ <div class="caption">  </div>
+</div>
+这里四个都有寻址, 而且 1 3 4 是一样的, 所以点开具体分析.
+</li>
+<li>首先点开 2. 这里的汇编是
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="err">00428256</span> <span class="err">-</span> <span class="err">8</span><span class="nf">B</span> <span class="mi">15</span> <span class="mi">60066400</span>  <span class="p">-</span> <span class="no">mov</span> <span class="no">edx</span><span class="p">,[</span><span class="err">&#34;</span><span class="no">Tutorial-i386.exe</span><span class="err">&#34;+</span><span class="mi">240660</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="err">0042825</span><span class="nf">C</span> <span class="p">-</span> <span class="mi">8</span><span class="no">B</span> <span class="mi">45</span> <span class="no">F0</span>  <span class="p">-</span> <span class="no">mov</span> <span class="no">eax</span><span class="p">,[</span><span class="no">ebp-10</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="err">0042825</span><span class="nf">F</span> <span class="p">-</span> <span class="mi">89</span> <span class="mi">02</span>  <span class="p">-</span> <span class="no">mov</span> <span class="p">[</span><span class="no">edx</span><span class="p">],</span><span class="no">eax</span> <span class="err">&lt;&lt;</span>
+</span></span><span class="line"><span class="cl"><span class="err">00428261</span> <span class="err">-</span> <span class="nf">A1</span> <span class="mi">60066400</span> <span class="p">-</span> <span class="no">mov</span> <span class="no">eax</span><span class="p">,[</span><span class="err">&#34;</span><span class="no">Tutorial-i386.exe</span><span class="err">&#34;+</span><span class="mi">240660</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="err">00428266</span> <span class="err">-</span> <span class="err">8</span><span class="nf">B</span> <span class="mi">00</span>  <span class="p">-</span> <span class="no">mov</span> <span class="no">eax</span><span class="p">,[</span><span class="no">eax</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">EAX</span><span class="err">=</span><span class="mi">00000028</span>
+</span></span><span class="line"><span class="cl"><span class="nf">EBX</span><span class="err">=</span><span class="mi">00000000</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ECX</span><span class="err">=</span><span class="mi">00000000</span>
+</span></span><span class="line"><span class="cl"><span class="nf">EDX</span><span class="err">=</span><span class="mi">01895580</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ESI</span><span class="err">=</span><span class="mi">00000000</span>
+</span></span><span class="line"><span class="cl"><span class="nf">EDI</span><span class="err">=</span><span class="mi">00618178</span>
+</span></span><span class="line"><span class="cl"><span class="nf">EBP</span><span class="err">=</span><span class="mi">0165</span><span class="no">F3D8</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ESP</span><span class="err">=</span><span class="mi">0165</span><span class="no">F2AC</span>
+</span></span><span class="line"><span class="cl"><span class="nf">EIP</span><span class="err">=</span><span class="mi">00428261</span>
+</span></span></code></pre></div>这里 <code>edx=01895580</code> 和我们搜到的地址一样, 所以 <code>mov [edx], eax</code> 就是把 eax 的值写到我们搜到的位置. 而 <code>eax</code> 的来源在上一步 <code>mov eax, [ebp - 10]</code>. 而 <code>ebp</code> 应该是函数调用时 <code>mov ebp, esp</code> 得到的, 即当前函数的栈底. 换句话说, 这里的 <code>[ebp - 10]</code> 是调用前传入的参数, 所以我们先看另外三个.
+<div align=center>
+ <img src="pics/step6-2.png" alt="step6-2" width="400" style="margin:0 auto 3px">
+ <div class="caption">  </div>
+</div>
+</li>
+<li>点开 1 3 4, 可以看到三者的汇编都是
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="err">00428261</span> <span class="err">-</span> <span class="nf">A1</span> <span class="mi">60066400</span> <span class="p">-</span> <span class="no">mov</span> <span class="no">eax</span><span class="p">,[</span><span class="err">&#34;</span><span class="no">Tutorial-i386.exe</span><span class="err">&#34;+</span><span class="mi">240660</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="err">00428266</span> <span class="err">-</span> <span class="err">8</span><span class="nf">B</span> <span class="mi">00</span>  <span class="p">-</span> <span class="no">mov</span> <span class="no">eax</span><span class="p">,[</span><span class="no">eax</span><span class="p">]</span> <span class="err">&lt;&lt;</span>
+</span></span></code></pre></div><div align=center>
+ <img src="pics/step6-1.png" alt="step6-1" width="400" style="margin:0 auto 3px">
+ <div class="caption">  </div>
+</div>
+这里明显看到了相对基址的地址, 所以这, `["Tutorial-i386.exe"+240660]`, 就是我们要找的指针了. 用 Add Address Manually 把这个指针添加到记录中(方法: 选择 Pointer, 并输入 `"Tutorial-i386.exe"+240660`),
+<div align=center>
+ <img src="pics/step6-ptr.png" alt="step6-ptr" width="400" style="margin:0 auto 3px">
+ <div class="caption">  </div>
+</div>
+在下方会出现一个地址为 `P->xxxxxxxx` 的变量, 数值应该和之前搜到的一样. 接下来点击 Change pointer, 那么 `"Tutorial-i386.exe"+240660` 这里存储的值应该会变化(指针改变了), 我们看不到这个指针的值是多少, 但是 CE 下面的表格里已经添加了它指向的值, 也就是说即使指针改变了, 我们还是能修改程序里存储的值. 因此点击 Change pointer 并在三秒内把这个值改成 5000(这一步需要一点手速, 可以把 5000 复制好直接粘贴), 就可以通关了.
+</li>
+</ol>
+<p>注: 如果中途把 &ldquo;Find out what accesses this address&rdquo; 关掉了, 再打开可能出现 Change Value 但是没反应的情况. 这是因为程序没有挂载反汇编器. 在最初的添加进程那个对话框里有一个 &ldquo;Attach debugger to process&rdquo;, 选中进程再点一下这个就可以了.</p>
+<div align=center>
+    <img src="pics/step6-debugger.png" alt="debugger" caption="" width="400" style="margin:0 auto 3px">
+    <div class="caption"> 点击这里的 Attach debugger ... </div>
+</div>
+
+<h2 class="relative group">第七关 
+    <div id="第七关" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%ac%ac%e4%b8%83%e5%85%b3" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<details class="spoiler">
+  <summary>Step 7</summary>
+  <div class="spoiler-content">
+    <blockquote>
+<p>Step 7: Code Injection: (PW=013370)</p>
+<p>Code injection is a technique where you inject a piece of code into the target process, and then reroute the execution of code to go through your own written code.</p>
+<p>In this tutorial you&rsquo;ll have a health value and a button that will decrease your health by 1 each time you click it.</p>
+<p>Your task is to use code injection to make the button increase your health by 2 each time it is clicked.</p>
+<p>Start with finding the address and then find what writes to it.</p>
+<p>Then when you&rsquo;ve found the code that decreases it browse to that address in the disassembler, and open the auto assembler window (Ctrl+A).</p>
+<p>There click on template and then code injection, and give it the address that decreases health (if it isn&rsquo;t already filled in correctly).</p>
+<p>That will generate a basic auto assembler injection framework you can use for your code.</p>
+<p>Notice the alloc, that will allocate a block of memory for your code cave, in the past, in the pre windows 2000 systems, people had to find code caves in the memory (regions of memory unused by the game), but that&rsquo;s luckily a thing of the past since windows 2000, and will these days cause errors when trying to be used, due to SP2 of XP and the NX bit of new CPUs.</p>
+<p>Also notice the line newmem: and originalcode: and the text &ldquo;Place your code here&rdquo;.</p>
+<p>As you guessed it, write your code here that will increase the health with 2.</p>
+<p>A useful assembler instruction in this case is the &ldquo;ADD instruction&rdquo;.</p>
+<p>Here are a few examples:</p>
+<p>&ldquo;ADD [00901234],9&rdquo; to increase the address at 00901234 with 9</p>
+<p>&ldquo;ADD [ESP+4],9&rdquo; to increase the address pointed to by ESP+4 with 9</p>
+<p>In this case, you&rsquo;ll have to use the same thing between the brackets as the original code has that decreases your health.</p>
+<p>Notice:</p>
+<p>It is recommended to delete the line that decreases your health from the original code section, else you&rsquo;ll have to increase your health with 3 (you increase with 3, the original code decreases with 1, so the end result is increase with 2), which might become confusing. But it&rsquo;s all up to you and your programming.</p>
+<p>Notice 2:</p>
+<p>In some games the original code can exist out of multiple instructions, and sometimes, not always, it might happen that a code at another place jumps into your jump instruction end will then cause unknown behavior. If that happens, you should usually look near that instruction and see the jumps and fix it, or perhaps even choose to use a different address to do the code injection from. As long as you&rsquo;re able to figure out the address to change from inside your injected code.</p></blockquote>
+
+  </div>
+</details>
+
+<style>
+.spoiler {
+  margin: 1rem 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+}
+.spoiler summary {
+  padding: 0.5rem 1rem;
+  background-color: #f7fafc;
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;  
+}
+.spoiler summary::marker,
+.spoiler summary::-webkit-details-marker {
+  display: none;  
+}
+.spoiler summary:after {
+  content: "▼";
+  float: right;
+  transition: transform 0.2s;
+}
+.spoiler[open] summary:after {
+  transform: rotate(180deg);
+}
+.spoiler-content {
+  padding: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+</style>
+<p>这一节学习代码注入, 即在程序中插入一段代码, 修改功能. CE 提供了非常方便的代码注入模板. 这一关我们的目标是把扣 1 血的按钮变成加 2 血的. 首先换之前一样找到写入这片内存的代码, 打开 debugger view, 选中这一行(应该是类似 <code>sub dword ptr [ebx+000004A8],01</code>), 按 Ctrl + A 打开 Auto Assemble 对话框. 然后选上面的 Template-Code Injection, CE 会写好跳转的代码</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">alloc</span><span class="p">(</span><span class="no">newmem</span><span class="p">,</span><span class="mi">2048</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">label</span><span class="p">(</span><span class="no">returnhere</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">label</span><span class="p">(</span><span class="no">originalcode</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">label</span><span class="p">(</span><span class="no">exit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nl">newmem:</span> <span class="c1">//this is allocated memory, you have read,write,execute access
+</span></span></span><span class="line"><span class="cl"><span class="c1">//place your code here
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nl">originalcode:</span>
+</span></span><span class="line"><span class="cl"><span class="nf">sub</span> <span class="no">dword</span> <span class="no">ptr</span> <span class="p">[</span><span class="no">ebx</span><span class="err">+</span><span class="mi">000004</span><span class="no">A8</span><span class="p">],</span><span class="mi">01</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nl">exit:</span>
+</span></span><span class="line"><span class="cl"><span class="nf">jmp</span> <span class="no">returnhere</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">019</span><span class="nl">C0000:</span>
+</span></span><span class="line"><span class="cl"><span class="nf">jmp</span> <span class="no">newmem</span>
+</span></span><span class="line"><span class="cl"><span class="nf">nop</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="nl">returnhere:</span>
+</span></span></code></pre></div><p>在 <code>newmem</code> 这里加上 <code>add dword ptr [ebx+000004A8],02</code>, 同时把 <code>originalcode</code> 中原来的代码删掉, 点击对话框的 Execute 即可.</p>
+<p>本关还有一种解法, 因为 <code>add</code> 和 <code>sub</code> 的命令长度一样, 所以可以直接替换原来的汇编命令.</p>
+
+<h2 class="relative group">第八关 
+    <div id="第八关" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%ac%ac%e5%85%ab%e5%85%b3" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<details class="spoiler">
+  <summary>Step 8</summary>
+  <div class="spoiler-content">
+    <blockquote>
+<p>Step 8: Multilevel pointers: (PW=525927)</p>
+<p>This step will explain how to use multi-level pointers.</p>
+<p>In step 6 you had a simple level-1 pointer, with the first address found already being the real base address.</p>
+<p>This step however is a level-4 pointer. It has a pointer to a pointer to a pointer to a pointer to a pointer to the health.</p>
+<p>You basicly do the same as in step 6. Find out what accesses the value, look at the instruction and what probably is the base pointer value, and what is the offset, and already fill that in or write it down. But in this case the address you&rsquo;ll find will also be a pointer. You just have to find out the pointer to that pointer exactly the same way as you did with the value. Find out what accesses that address you found, look at the assembler instruction, note the probable instruction and offset, and use that.</p>
+<p>And continue till you can&rsquo;t get any further (usually when the base address is a static address, shown up as green.)</p>
+<p>Click Change Value to let the tutorial access the health.</p>
+<p>If you think you&rsquo;ve found the pointer path click Change Register. The pointers and value will then change and you&rsquo;ll have 3 seconds to freeze the address to 5000.</p>
+<p>Extra: This problem can also be solved using an auto assembler script, or using the pointer scanner.</p>
+<p>Extra2: In some situations it is recommended to change CE&rsquo;s Codefinder settings to Access violations when encountering instructions like mov eax,[eax] since debug registers show it AFTER it was changed, making it hard to find out the value of the pointer.</p>
+<p>Extra3: If you&rsquo;re still reading. You might notice that when looking at the assembler instructions that the pointer is being read and filled out in the same codeblock (same routine, if you know assembler, look up till the start of the routine). This doesn&rsquo;t always happen, but can be really useful in finding a pointer when debugging is troublesome.</p></blockquote>
+
+  </div>
+</details>
+
+<style>
+.spoiler {
+  margin: 1rem 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+}
+.spoiler summary {
+  padding: 0.5rem 1rem;
+  background-color: #f7fafc;
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;  
+}
+.spoiler summary::marker,
+.spoiler summary::-webkit-details-marker {
+  display: none;  
+}
+.spoiler summary:after {
+  content: "▼";
+  float: right;
+  transition: transform 0.2s;
+}
+.spoiler[open] summary:after {
+  transform: rotate(180deg);
+}
+.spoiler-content {
+  padding: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+</style>
+<p>这一关简单来说, 数据藏在四层指针之下. 我这里用到了一点 Extra3 的信息(或者说是运气好), 因为这四层指针的调用是紧挨着的, 所以一次就可以找到最底层.</p>
+<ol>
+<li>
+<p>按过去的方法搜索到显示值的地址(如我这里是 <code>019DF3B0</code>).</p>
+</li>
+<li>
+<p>选择 &ldquo;Find out what accesses this address&rdquo;. 点击 Change value 变动, 会发现出现一条信息</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="err">0042960</span><span class="nf">C</span> <span class="p">-</span> <span class="no">B8</span> <span class="no">A00F0000</span> <span class="p">-</span> <span class="no">mov</span> <span class="no">eax</span><span class="p">,</span><span class="mi">00000</span><span class="no">FA0</span>
+</span></span><span class="line"><span class="cl"><span class="err">00429611</span> <span class="err">-</span> <span class="nf">E8</span> <span class="mi">3</span><span class="no">A5AFEFF</span> <span class="p">-</span> <span class="no">call</span> <span class="err">&#34;</span><span class="no">Tutorial-i386.exe</span><span class="err">&#34;+</span><span class="no">F050</span>
+</span></span><span class="line"><span class="cl"><span class="err">00429616</span> <span class="err">-</span> <span class="err">89</span> <span class="err">46</span> <span class="err">18</span>  <span class="err">-</span> <span class="nf">mov</span> <span class="p">[</span><span class="no">esi</span><span class="err">+</span><span class="mi">18</span><span class="p">],</span><span class="no">eax</span> <span class="err">&lt;&lt;</span>
+</span></span><span class="line"><span class="cl"><span class="err">00429619</span> <span class="err">-</span> <span class="err">68</span> <span class="nf">FF000000</span> <span class="p">-</span> <span class="no">push</span> <span class="mi">000000</span><span class="no">FF</span>
+</span></span><span class="line"><span class="cl"><span class="err">0042961</span><span class="nf">E</span> <span class="p">-</span> <span class="mi">8</span><span class="no">D</span> <span class="mi">8</span><span class="no">D</span> <span class="no">FCFEFFFF</span>  <span class="p">-</span> <span class="no">lea</span> <span class="no">ecx</span><span class="p">,[</span><span class="no">ebp-00000104</span><span class="p">]</span>
+</span></span></code></pre></div><p>可以看出, <code>esi+18</code> 应该就是我们找到的地址, 也就是 <code>esi+18 = 019DF3B0</code>, 那么一定有什么地方计算出了 <code>esi</code>. 往上看, 会发现代码很复杂, 所以我们直接用 CE 搜索 <code>esi</code> 的值 <code>019DF398</code>(注意搜索时要选 Hex 选项).</p>
+</li>
+<li>
+<p>搜索后得到唯一的一个地址(如我这里是 <code>019DF348</code>). 理论上, 这里应该是把四层指针的值写入的地方. 所以选择 &ldquo;Find out what writes to this address&rdquo;. 点击 Change pointer, 随后出现了三个条目.</p>
+<div align=center>
+ <img src="pics/step8-1.png" alt="step8-1" width="600" style="margin:0 auto 3px">
+ <div class="caption">  </div>
+</div>
+<p>根据之前找指针的经验, 我们希望看到 <code>mov xxx, [xxx]</code> 的形式, 检查三个结果, 发现第三个结果里面是</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="err">00429184</span> <span class="err">-</span> <span class="err">8</span><span class="nf">B</span> <span class="mi">52</span> <span class="mi">14</span>  <span class="p">-</span> <span class="no">mov</span> <span class="no">edx</span><span class="p">,[</span><span class="no">edx</span><span class="err">+</span><span class="mi">14</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="err">00429187</span> <span class="err">-</span> <span class="err">8</span><span class="nf">B</span> <span class="mi">12</span>  <span class="p">-</span> <span class="no">mov</span> <span class="no">edx</span><span class="p">,[</span><span class="no">edx</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="err">00429189</span> <span class="err">-</span> <span class="err">89</span> <span class="err">02</span>  <span class="err">-</span> <span class="nf">mov</span> <span class="p">[</span><span class="no">edx</span><span class="p">],</span><span class="no">eax</span> <span class="err">&lt;&lt;</span>
+</span></span><span class="line"><span class="cl"><span class="err">0042918</span><span class="nf">B</span> <span class="p">-</span> <span class="no">B8</span> <span class="mi">9</span><span class="no">F860100</span> <span class="p">-</span> <span class="no">mov</span> <span class="no">eax</span><span class="p">,</span><span class="mi">0001869</span><span class="no">F</span>
+</span></span><span class="line"><span class="cl"><span class="err">00429190</span> <span class="err">-</span> <span class="nf">E8</span> <span class="no">BB5EFEFF</span> <span class="p">-</span> <span class="no">call</span> <span class="err">&#34;</span><span class="no">Tutorial-i386.exe</span><span class="err">&#34;+</span><span class="no">F050</span>
+</span></span></code></pre></div><p>可以看到上面有一串的 <code>mov edx, [edx+xxx]</code>. 点开 disassembler 界面, 会看到正好有四层指针</p>
+<div align=center>
+ <img src="pics/step8-2.png" alt="step8-2" width="600" style="margin:0 auto 3px">
+ <div class="caption">  </div>
+</div>
+<p><code>mov edx,[&quot;Tutorial-i386.exe&quot;+240690]</code> 这一句是开始, 所以我们添加一个四层指针</p>
+<div align=center>
+ <img src="pics/step8-3.png" alt="8-3" width="400" style="margin:0 auto 3px">
+ <div class="caption">  </div>
+</div>
+<p>注意四层指针指向的是 <code>esi</code>, 最后还要偏移 <code>0x18</code> 个单位, 不要忘记了. 添加之后修改为 5000 并锁住, 再点击 Change pointer 即可.</p>
+</li>
+</ol>
+<p>理论上来说这个题目应该搜索好几次. 我后面尝试了一下, 如果在第二步搜的不是 <code>esi</code> 而是 <code>esi+18</code>, 或者按 Change value 来搜, 就会进入正常的流程, 需要一层一层搜索. 我这里应该是取巧了. 不过最终做出来就好.</p>
+
+<h2 class="relative group">第九关 
+    <div id="第九关" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%ac%ac%e4%b9%9d%e5%85%b3" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<details class="spoiler">
+  <summary>Step 9</summary>
+  <div class="spoiler-content">
+    <blockquote>
+<p>Step 9: Shared code: (PW=31337157)</p>
+<p>This step will explain how to deal with code that is used for other object of the same type</p>
+<p>Often when you&rsquo;ve found health of a unit or your own player, you will find that if you remove the code, it affects enemies as well.</p>
+<p>In these cases you must find out how to distinguish between your and the enemies objects.</p>
+<p>Sometimes this is as easy as checking the first 4 bytes (Function pointer table) which often point to a unique location for the player, and sometimes it&rsquo;s a team number, or a pointer to a pointer to a pointer to a pointer to a pointer to a playername. It all depends on the complexity of the game, and your luck</p>
+<p>The easiest method is finding what addresses the code you found writes to and then use the dissect data feature to compare against two structures. (Your unit(s)/player and the enemies) And then see if you can find out a way to distinguish between them.</p>
+<p>When you have found out how to distinguish between you and the computer you can inject an assembler script that checks for the condition and then either do not execute the code or do something else. (One hit kills for example)</p>
+<p>Alternatively, you can also use this to build a so called &ldquo;Array of byte&rdquo; string which you can use to search which will result in a list of all your or the enemies players</p>
+<p>In this tutorial I have implemented the most amazing game you will ever play.</p>
+<p>It has 4 players. 2 Players belong to your team, and 2 Players belong to the computer.</p>
+<p>Your task is to find the code that writes the health and make it so you win the game WITHOUT freezing your health</p>
+<p>To continue, press &ldquo;Restart game and autoplay&rdquo; to test that your code is correct</p>
+<p>Tip: Health is a float</p>
+<p>Tip2: There are multiple solutions</p></blockquote>
+
+  </div>
+</details>
+
+<style>
+.spoiler {
+  margin: 1rem 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+}
+.spoiler summary {
+  padding: 0.5rem 1rem;
+  background-color: #f7fafc;
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;  
+}
+.spoiler summary::marker,
+.spoiler summary::-webkit-details-marker {
+  display: none;  
+}
+.spoiler summary:after {
+  content: "▼";
+  float: right;
+  transition: transform 0.2s;
+}
+.spoiler[open] summary:after {
+  transform: rotate(180deg);
+}
+.spoiler-content {
+  padding: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+</style>
+<p>这一关就是使用之前学到的技能, 通关这个不可能的游戏. 这个游戏左边的两个人是我方, 右边是敌方. 我方对敌方只能造成 1 点伤害, 敌方可以对我方造成更高的伤害. 我方初始生命为 100, 敌方为 500. 游戏提供的四个 Attack 按钮供玩家测试. 目标是按下面的自动战斗后获得胜利.</p>
+<p>这个关卡的通关方法显然不唯一, 这里简要说明一下我做的过程和注意点.</p>
+<ol>
+<li>用上面的 Attack 搜索到四个生命值, 然后 Find &hellip; write &hellip; 找到写入的函数. 我们会看到写入之前是将伤害放入 <code>edx</code>, 然后把生命指针传给 <code>eax</code>, 再调用一个函数来处理. 因为这个函数是共用的, 所以不能直接修改它.</li>
+<li>我的思路就是, 让己方的伤害变为 0, 让敌方的伤害变为 100, 这样就可以打过了. 方法既可以是直接修改汇编指令, 或者使用第七关中学到的代码注入来修改(我用了这个, 比较方便).</li>
+<li>这里有一个细节, 就是下面自动战斗和上面 Attack 计算伤害的代码是不一样的. 所以改了 Attack 还是会失败. 所以我们需要再 Find &hellip; write 一次, 但这次选择自动战斗, 然后按第二步再改一次就可以了.</li>
+</ol>
+
+<h2 class="relative group">通关后 
+    <div id="通关后" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%80%9a%e5%85%b3%e5%90%8e" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p>全部通关后会自动打开一个有画面的游戏, 里面有三关, 同样需要通过 CE 才能通关. 但是这三关的难度比前面还要低(因为数值很好搜). 可能需要特殊提的是第三关, 这一关我的通关方法是</p>
+<ol>
+<li>搜索到角色所在的坐标, 是两个浮点数.</li>
+<li>用 Find &hellip; write &hellip; 找到修改纵向坐标的自由落体代码, 然后使之无效化, 这样就不会自动下落了(否则即使锁住纵坐标, 还是会下落)</li>
+<li>通过手动修改坐标的方法到达想到的点. 这个平台不用踩上去才会变绿色, 只要处在其<strong>上方</strong>一定范围内即可, 所以不用特别精确.</li>
+</ol>
+
+          
+          
+          
+        </div>
+
+        
+
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_posts\cheat-engine\index.md"
+          data-oid-likes="likes_posts\cheat-engine\index.md"></script>
+      
+
+    </section>
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/posts/lae-dino-report/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >使用语言增强 LAE-DINO 模型检测卫星遥感图像效果 - 初探</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-07-31T10:51:16&#43;08:00">2025 年 7 月 31 日</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+        
+          <div class="pt-3">
+            <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+            <div class="pt-3">
+              <head>
+  
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/@waline/client@v3/dist/waline.css"
+  />
+  
+</head>
+<body>
+  
+  <div id="waline"></div>
+  <script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+
+    init({
+      el: '#waline',
+      serverURL: 'https://myblog-waline-beta.vercel.app/',
+      lang: 'zh-CN',
+      locale: { placeholder: '评论最多400字' },
+      wordLimit: 400,
+      search: false,
+      pageview: true,
+      dark: 'html[class="scroll-smooth dark"]',
+    });
+  </script>
+
+  <style>
+       
+      :root {
+         
+        --waline-font-size: 16px;
+
+         
+        --waline-white: #ffff;
+         
+        --waline-light-grey: #999;
+         
+        --waline-dark-grey: #666;
+
+         
+        --waline-theme-color: #3b82f6;
+         
+        --waline-active-color: #2ecc71;
+
+         
+        --waline-color: #222;
+         
+        --waline-bgcolor: #fff;
+         
+        --waline-bgcolor-light: #f8f8f8;
+         
+        --waline-bgcolor-hover: #2ecc71;
+         
+        --waline-border-color: #ddd;
+         
+        --waline-disable-bgcolor: rgba(248, 248, 248, 0.4);
+         
+        --waline-disable-color:#bbb;
+         
+        --waline-code-bgcolor: #282c34;
+
+         
+        --waline-bq-color: #f0f0f0;
+
+         
+        --waline-avatar-size: 3.25rem;
+         
+        --waline-m-avatar-size: calc(var(--waline-avatar-size) * 9 / 13);
+
+         
+        --waline-badge-color: #3b82f6;
+         
+        --waline-badge-font-size: 12px;
+
+         
+        --waline-info-border: 1px solid #999;
+         
+        --waline-info-color: #999;
+         
+        --waline-info-font-size: 16px;
+           
+        --waline-info-bgcolor: rgba(235, 235, 235, 0.4);
+
+         
+        --waline-border: 1px solid var(--waline-border-color);
+         
+        --waline-avatar-radius: 50%;
+         
+        --waline-box-shadow: none;
+      }
+
+       
+      html[class="scroll-smooth dark"]{
+         
+        --waline-white: #000;
+          
+        --waline-light-grey: #999;
+         
+          
+        --waline-dark-grey: #999;
+
+         
+        --waline-color: #c2c2c2;
+          
+        --waline-bgcolor: #1E293B;
+          
+        --waline-bgcolor-light: #2A354F;
+          
+        --waline-border-color: #666;
+          
+        --waline-disable-bgcolor: rgba(68, 68, 68, 0.8);
+          
+        --waline-disable-color: #888;
+
+         
+        --waline-bq-color: #1F2D4B;
+
+         
+        --waline-info-bgcolor: rgba(31, 45, 75, 0.8);
+          
+        --waline-info-color: #888;
+         
+        --waline-info-border: 1px solid #d3d3d3;
+      }
+    </style>
+</body>
+
+
+            </div>
+          </div>
+        
+      
+    </footer>
+  </article>
+
+        <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a
+    href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="返回顶部"
+    title="返回顶部">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          Eclipse
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        由 <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a> 强力驱动
+      </p>
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script> 
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="搜索"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="关闭 (Esc)">
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>
