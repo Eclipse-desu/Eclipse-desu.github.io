@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数学 on Eclipse</title>
+    <link>https://Eclipse-desu.github.io/categories/%E6%95%B0%E5%AD%A6/</link>
+    <description>Recent content in 数学 on Eclipse</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>hongyz@zju.edu.com (Eclipse)</managingEditor>
+    <webMaster>hongyz@zju.edu.com (Eclipse)</webMaster>
+    <copyright>© 2025 Eclipse</copyright>
+    <lastBuildDate>Tue, 05 Aug 2025 16:18:27 +0800</lastBuildDate><atom:link href="https://Eclipse-desu.github.io/categories/%E6%95%B0%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>关于 Eisenstein 判别法的笔记</title>
+      <link>https://Eclipse-desu.github.io/posts/eisenstein/</link>
+      <pubDate>Tue, 05 Aug 2025 16:18:27 +0800</pubDate>
+      <author>hongyz@zju.edu.com (Eclipse)</author>
+      <guid>https://Eclipse-desu.github.io/posts/eisenstein/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>
